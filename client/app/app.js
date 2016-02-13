@@ -30,16 +30,16 @@ angular.module('shortly', [
     $httpProvider.interceptors.push('AttachTokens');
 })
 
-.factory('Links', function ($http){
+.factory('Links', function ($http) {
   var links = {
-    get: function(){
+    get: function () {
       // $http();
     },
-    post: function(){
-
+    post: function () {
+      // test
     }
-  }
-  return links
+  };
+  return links;
 })
 
 .factory('AttachTokens', function ($window) {

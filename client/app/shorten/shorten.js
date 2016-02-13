@@ -13,18 +13,16 @@ angular.module('shortly.shorten', [])
       });
   };
 
-  $scope.validateLink = function(link){
+  $scope.validateLink = function (link) {
     console.log('validations....');
     var rValidUrl = /^(?!mailto:)(?:(?:https?|ftp):\/\/)?(?:\S+(?::\S*)?@)?(?:(?:(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[0-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))|localhost)(?::\d{2,5})?(?:\/[^\s]*)?$/i;
-    
-    var linkIsCool = link.match(rValidUrl);    
-    if(linkIsCool){
+    var linkIsValid = link.match(rValidUrl);
+    if ( link.length === 0) {
+      $scope.urlMessage = '';
+    } else if ( linkIsValid ) {
       $scope.urlMessage = "Cool";
-    }else{
-      $scope.urlMessage = "NOOOOOOOOOOOO";
+    } else {
+      $scope.urlMessage = "INVALID LINK"; //TODO: emoji for later U+1F4A9
     }
-
-    //return link.match(rValidUrl);
-  }
-
+  };
 });
