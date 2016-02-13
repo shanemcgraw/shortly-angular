@@ -30,17 +30,7 @@ angular.module('shortly', [
     $httpProvider.interceptors.push('AttachTokens');
 })
 
-.factory('Links', function ($http) {
-  var links = {
-    get: function () {
-      // $http();
-    },
-    post: function () {
-      // test
-    }
-  };
-  return links;
-})
+
 
 .factory('AttachTokens', function ($window) {
   // this is an $httpInterceptor
