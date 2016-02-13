@@ -1,6 +1,18 @@
-<div id='container'>
-<!-- Your code here -->
+<div id='container' ng-app="shortly.shorten">
+  <!-- Your html here -->
+    
+  <p>Shorten!</p>
 
+  <div >
+    <form>
+      <input ng-model="newLink" ></input>
+      <button ng-click="showLink()">Submit</button>
+    </form>
+
+    {{newLink}}
+
+  </div>
+
+  <div>
+  </div>
 </div>
-
-
