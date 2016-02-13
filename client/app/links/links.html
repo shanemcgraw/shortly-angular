@@ -1,10 +1,19 @@
 <div id='container' ng-app="shortly.links">
+  <div class="navigation">
+  <ul>
+    <li><a href="#shorten">Shorten</a></li>
+    <li><a href="#links">Links</a></li>
+    <li><a ng-controller="AuthController" ng-click="signout()" href="#signout">Signout</a></li>
+
+  </ul>
+  </div>
   <!-- Your html here -->
-  <p>Links</p>
-  <!-- <button ng-click="showData(callback)">Button</button> -->
   <div ng-controller="LinksController">
+  <p>
+    <input type="text" ng-model="search" placeholder="Search Links"></input>
+  </p>
   
-    <div ng-repeat="link in data | orderBy: '-visits'" >
+    <div ng-repeat="link in data | filter:search | orderBy: '-visits'" >
       <a href="{{link.base_url + '/' + link.code}}">
         <p class="link">
           <img src="assets/redirect_icon.png">

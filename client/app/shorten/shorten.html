@@ -1,12 +1,19 @@
 <div id='container' ng-app="shortly.shorten">
   <!-- Your html here -->
-    
+  <div class="navigation">
+    <ul>
+      <li><a href="#shorten">Shorten</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a ng-controller="AuthController" ng-click="signout()" href="#signout">Signout</a></li>
+    </ul>
+  </div>
+
   <p>Shorten!</p>
 
   <div >
     <form>
       <input ng-model="newLink" ng-change="validateLink(newLink)" ></input>
-      <button ng-click="postLink(newLink)">Submit</button>
+      <button ng-click="addLink(newLink)">Submit</button>
     </form>
   </div>
 
