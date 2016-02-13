@@ -5,13 +5,12 @@
 
   <div >
     <form>
-      <input ng-model="newLink" ></input>
+      <input ng-model="newLink" ng-change="validateLink(newLink)" ></input>
       <button ng-click="postLink(newLink)">Submit</button>
     </form>
-
-    {{newLink}}
-
   </div>
+
+  <p>{{urlMessage}}</p>
 
   <div>
   </div>

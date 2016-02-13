@@ -29,6 +29,19 @@ angular.module('shortly', [
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');
 })
+
+.factory('Links', function ($http){
+  var links = {
+    get: function(){
+      // $http();
+    },
+    post: function(){
+
+    }
+  }
+  return links
+})
+
 .factory('AttachTokens', function ($window) {
   // this is an $httpInterceptor
   // its job is to stop all out going request
