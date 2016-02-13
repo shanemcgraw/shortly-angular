@@ -4,6 +4,5 @@ angular.module('shortly.links', [])
   // Your code here
     $scope.data = ['www.google.com', 'test2'];
 
-
 });
 

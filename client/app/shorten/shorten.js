@@ -1,11 +1,10 @@
 angular.module('shortly.shorten', [])
 
-.controller('ShortenController', function ($scope, $location) {
+.controller('ShortenController', function ($scope, $location, $http) {
 
-  $scope.showLink = function(){
+  $scope.postLink = function () {
     console.log("hi");
-  }
 
-
+  };
 
 });

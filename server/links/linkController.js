@@ -20,6 +20,8 @@ module.exports = {
   },
 
   newLink: function (req, res, next) {
+    console.log('New link fires---------: ', req.body);
+    
     var url = req.body.url;
     if (!util.isValidUrl(url)) {
       return next(new Error('Not a valid url'));
