@@ -1,5 +1,14 @@
-<div id='container'>
+<div id='container' ng-app="shortly.links">
   <!-- Your html here -->
   <p>Links</p>
-  <div></div>
+  <div ng-controller="LinksController">
+    <div ng-repeat="link in data track by $index">
+      </p>
+        <a href="{{link}}">
+          <img src="assets/redirect_icon.png">
+          {{link}}
+        </a>
+      </p>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,9 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope) {
   // Your code here
-    $scope.user = 24;
+    $scope.data = ['www.google.com', 'test2'];
+
+
 });
 
