@@ -2,12 +2,14 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   var links = {
-    getAll: function () {
+    getAll: function (callback) {
+      //console.log('GET ALL !++++++++++++++++++++++++++');
       $http({
         method: "GET",
         url: '/api/links'
-      }).success(function () {
-        console.log("We've had success!");
+      }).success(function (data) {
+        //console.log("We've had success getting all from server: ", data);
+        callback(data);
       });
     },
     addOne: function (link) {
