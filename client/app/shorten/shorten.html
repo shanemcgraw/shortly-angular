@@ -4,7 +4,7 @@
     <ul>
       <li><a href="#shorten">Shorten</a></li>
       <li><a href="#links">Links</a></li>
-      <li><a ng-controller="AuthController" ng-click="signout()" href="#signout">Signout</a></li>
+      <li><a ng-controller="AuthController" ng-click="signout()" href="#signin">Signout</a></li>
     </ul>
   </div>
 
@@ -12,9 +12,30 @@
 
   <div >
     <form>
-      <input ng-model="newLink" ng-change="validateLink(newLink)" ></input>
-      <button ng-click="addLink(newLink)">Submit</button>
+      <input
+        ng-model="newLink"
+        ng-change="validateLink(newLink)"
+        placeholder="Enter your url here..."
+        ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}"
+      />
+
+      <button
+        ng-click="addLink(newLink)"
+        ng-disabled-"shortlyForm.$invalid"
+      >
+        Submit
+      </button>
     </form>
+
+    <!-- fix this stuff -->
+    <div ng-show="shortlyForm.link.$error.required && shortlyForm.$dirty">
+      <h2>Url required</h2>
+    </div>
+    <div ng-show="shortlyForm.link.$error.required && shortlyForm.$dirty">
+      <h2>Not a valid url</h2>
+    </div>
+
+    <img src="assets/spiffygif_46x46.gif" alt="">
   </div>
 
   <p>{{urlMessage}}</p>
