@@ -7,11 +7,15 @@ angular.module('shortly.shorten', [])
   $scope.addLink = function (newLink) {
     console.log('Post from client', newLink);
 
+    $scope.loading = true;
+
     var postData = JSON.stringify( {url: newLink} );
 
     $http.post("http://localhost:8000/api/links", postData)
       .success(function (response) {
         console.log('success!', response);
+        $scope.loading = false;
+        $location.path('/links');
       });
   };
 
